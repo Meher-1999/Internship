@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<h1 align = "center">JAVA SCRIPT DOM</h1>
+<head>
+	<style>
+		.center {
+		  margin: 0;
+		  position: absolute; 	
+		  left: 50%;
+		  -ms-transform: translate(-50%, -50%);
+		  transform: translate(-50%, -50%);
+		}
+	</style>
+</head>
+<body>
+	<h4>JavaScript is a programming language that adds interactivity to your website. This happens in games, in the behavior of responses when buttons are pressed or with data entry on forms; with dynamic styling; with animation, etc. This article helps you get started with JavaScript and furthers your understanding of what is possible.</h4>
+	<h3 align = "center">To read a date and print it on a console</h3>
+	<h3 align = "center">To demostrate the use of HTML events for the tabs</h3>
+	<div class = "center">
+		<button onclick = "document.getElementById('demo').innerHTML = Date()">Click here to check the current time!</button>
+	</div>
+	<br><br>
+	<div class="center">
+		<button onclick = "this.innerHTML = Date()">Click here to check the time more interactively...!</button>
+	</div>
+	<br><br>
+	<div class="center">
+		<button onclick="displayDate()">Check this last event...</button>
+	</div>
+	<h3 align = "center">To Understand more about Control Flows</h3> 
+	<p align = "center">Please input a number between 10 and 100</p>
+	<br><br>
+	<div class="center">
+		<input id = "myInput" type = "text">
+		<button onclick = "control_flow()">Click here to check if number is between 10 - 100</button>
+	</div>
+	<br><br>
+	<p align = "center">Please input a number to generate fibonacci series...</p>
+	<br><br>	
+	<div class="center">
+		<input id = "userInput" type = "text">
+		<button onclick = "fibonacci()">Click here to generate the fibonacci series</button>
+	</div>
+	<br><br><br>
+	<div class="center">
+		<button onclick = "string()">Click here to check the usage of string functions</button>
+	</div>
+	<p id = "demo"></p>
+	<script>
+		var date = new Date();
+		console.log(date.toLocaleDateString());
+		function displayDate() {
+			document.getElementById("demo").innerHTML = Date();
+		}
+		function control_flow(number){
+			var text,message,number;
+			message = document.getElementById("demo");
+			message.innerHTML = "";
+			number = document.getElementById("myInput").value;
+			try{
+				if(number == "") throw "is empty";
+				if(isNaN(number)) throw "is not a number";
+				number = Number(number);
+				if(number < 10) throw "is too low";
+				if(number > 100) throw "is too high"; 
+				switch(number) {
+					case 11:
+					case 12:
+					case 13:
+					case 14:
+					case 15:
+					case 16:
+					case 17:
+					case 18:
+					case 19:
+					case 20:
+					case 21:
+					case 22:
+					case 23:
+					case 24:
+					case 25:
+					case 26:
+					case 27:
+					case 28:
+					case 29:
+					case 30:
+					case 31:
+					case 32:
+					case 33:
+					case 34:
+					case 35:
+					case 36:
+					case 37:
+					case 38:
+					case 39:
+					case 40:
+					case 41:
+					case 42:
+					case 43:
+					case 44:
+					case 45:
+					case 46:
+					case 47:
+					case 48:
+					case 49:
+					case 50:
+					case 51:
+					case 52:
+					case 53:
+					case 54:
+					case 55:
+					case 56:
+					case 57:
+					case 58:
+					case 59:
+					case 60:
+					case 61:
+					case 62:
+					case 63:
+					case 64:
+					case 65:
+					case 66:
+					case 67:
+					case 68:
+					case 69:
+					case 70:
+					case 71:
+					case 72:
+					case 73:
+					case 74:
+					case 75:
+					case 76:
+					case 77:
+					case 78:
+					case 79:
+					case 80:
+					case 81:
+					case 82:
+					case 83:
+					case 84:
+					case 85:
+					case 86:
+					case 87:
+					case 88:
+					case 89:
+					case 90:
+					case 91:
+					case 92:
+					case 93:
+					case 94:
+					case 95:
+					case 96:
+					case 97:
+					case 98:
+					case 99:
+						text = "The number is between 10 - 100";
+						break;
+				}
+				document.getElementById("demo").innerHTML = text; 
+			}
+			catch(err) {
+				message.innerHTML = "Input " + err;
+			}
+			finally {
+				document.getElementById("myInput").value = "";
+			}
+		}
+		function fibonacci() {
+			var fib = "0 1";
+			var n = document.getElementById("userInput").value , a = 0, b = 1, c = 0;
+			for(var i = 3; i <= n; i++){
+				c = a + b;
+				fib = fib + ' ' + c;
+				a = b;
+				b = c;
+			}
+			document.getElementById("demo").innerHTML = "The fibonacci series is " + fib;
+		}
+		function string() {
+			var s1 = "JavaScript is a programming language that adds interactivity to your website. This happens in games, in the behavior of responses when buttons are pressed or with data entry on forms; with dynamic styling; with animation, etc. This article helps you get started with JavaScript and furthers your understanding of what is possible."
+
+			var s2 = s1.slice(28,36);
+			
+			var s3 = s1.slice(42,46);
+
+			var s4 = s1.slice(64,68);
+			document.getElementById("demo").innerHTML = "The 5th, 7th, 10th words from the description given about are " + s2 + ", " + s3 + ", " + s4;
+		}
+	</script>
+</body>
+</html>
