@@ -1,7 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <h1 align = "center">JAVA SCRIPT DOM</h1>
 <head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>JQuery and Bootstrap</title>
+	<link rel="stylesheet" href=
+	"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity=
+		"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+		crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
+	crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+	crossorigin="anonymous"></script>
 	<style>
 		.center {
 		  margin: 0;
@@ -10,12 +28,19 @@
 		  -ms-transform: translate(-50%, -50%);
 		  transform: translate(-50%, -50%);
 		}
+		span {
+		    background: #def3ca;
+		    padding: 3px;
+		    float: center;
+		}
 	</style>
+	<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body>
-	<h4>JavaScript is a programming language that adds interactivity to your website. This happens in games, in the behavior of responses when buttons are pressed or with data entry on forms; with dynamic styling; with animation, etc. This article helps you get started with JavaScript and furthers your understanding of what is possible.</h4>
-	<h3 align = "center">To read a date and print it on a console</h3>
-	<h3 align = "center">To demostrate the use of HTML events for the tabs</h3>
+	<h6>JavaScript is a programming language that adds interactivity to your website. This happens in games, in the behavior of responses when buttons are pressed or with data entry on forms; with dynamic styling; with animation, etc. This article helps you get started with JavaScript and furthers your understanding of what is possible.</h6>
+	<h5 align = "center">To read a date and print it on a console</h5>
+	<h5 align = "center">To demostrate the use of HTML events for the tabs</h5>
+	<br>	
 	<div class = "center">
 		<button onclick = "document.getElementById('demo').innerHTML = Date()">Click here to check the current time!</button>
 	</div>
@@ -27,24 +52,33 @@
 	<div class="center">
 		<button onclick="displayDate()">Check this last event...</button>
 	</div>
-	<h3 align = "center">To Understand more about Control Flows</h3> 
+	<br>
+	<h5 align = "center">To Understand more about Control Flows</h5> 
 	<p align = "center">Please input a number between 10 and 100</p>
-	<br><br>
 	<div class="center">
 		<input id = "myInput" type = "text">
 		<button onclick = "control_flow()">Click here to check if number is between 10 - 100</button>
 	</div>
-	<br><br>
-	<p align = "center">Please input a number to generate fibonacci series...</p>
-	<br><br>	
+	<br>
+	<p align = "center">Please input a number to generate fibonacci series...</p>	
 	<div class="center">
 		<input id = "userInput" type = "text">
 		<button onclick = "fibonacci()">Click here to generate the fibonacci series</button>
 	</div>
-	<br><br><br>
+	<br><br>	
 	<div class="center">
 		<button onclick = "string()">Click here to check the usage of string functions</button>
 	</div>
+	<br><br>
+	<div class="center">
+		<button id = "hider">Hide</button>
+		<button id = "shower">Show</button>
+	</div>
+	<br><br>
+	<div class="center">
+		<span>jQuery</span> <span>is</span> <span>a</span> <span>JavaScript</span> <span>Library...</span>
+	</div>
+	<br>
 	<p id = "demo"></p>
 	<script>
 		var date = new Date();
@@ -186,6 +220,14 @@
 			var s4 = s1.slice(64,68);
 			document.getElementById("demo").innerHTML = "The 5th, 7th, 10th words from the description given about are " + s2 + ", " + s3 + ", " + s4;
 		}
+		$("#hider").click(function() {
+			$("span:last-child").hide("fast", function () {
+				$(this).prev().hide("fast", arguments.callee);
+			});
+		});
+		$("#shower").click(function() {
+			$("span").show(2000);
+		});
 	</script>
 </body>
 </html>
